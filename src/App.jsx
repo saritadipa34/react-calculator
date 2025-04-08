@@ -8,29 +8,33 @@ const [boxValue,setBoxValue]=useState('');
 
 const handleInput=()=>{
   console.log("onchange")
-}
+};
 
 const handleBox=(value)=>{
-  console.log(value,"clicked")
+  console.log(value,"clicked");
   switch (value){
     case "AC":
       setBoxValue('');
       break;
       case "DE":
-        setBoxValue(boxValue.slice(0,-1))
+        setBoxValue(boxValue.slice(0,-1));
 break;
 case "=":
   try{
+if(boxValue && !/[*/+-]$/.test(boxValue)){
     const result=eval(boxValue).toString();
   setBoxValue(result);
+} else {
+    setBoxValue('');
+  }
   } catch (error){
-    console.error(error)
+    console.error(error);
     setBoxValue('');
   }
  
   break;
   default :
-    setBoxValue(boxValue+value)
+    setBoxValue(boxValue+value);
 break;
   }
 

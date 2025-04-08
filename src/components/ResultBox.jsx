@@ -1,7 +1,7 @@
 
-const ResultBox=({value,onChange})=>{
+const ResultBox=({value})=>{
     return(
-        <input type="text" onChange={onChange} className="bg-white text-right w-full h-[70px] px-[15px] py-[10px] text-5xl mb-[20px] "
+        <input type="text" className="bg-white text-right w-full h-[70px] px-[15px] py-[10px] text-5xl mb-[20px] "
 value={value}
         />
     )
